@@ -1,6 +1,8 @@
 # Ontologia Alergia Alimentar
 Ontologia de referência de alergênicos alimentares, usando a linguagem OntoUML como um plugin no programa Visual Paradigm (.vpp), e com a ajuda do plugin transformada em .ttl para utilização no Protégé na linguagem OWL2.
 
+Padrões de projeto utilizados: Role Pattern, Relator Pattern, Subkind Pattern, Category Pattern
+
 Alergia Alimentar.vpp pode ser aberto no Visual Paradigm.
 
 Alergia Alimentar.rdf pode ser aberto no Protégé.
