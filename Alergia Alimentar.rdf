@@ -1,0 +1,2656 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.com#"
+     xml:base="http://example.com"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:gufo="http://purl.org/nemo/gufo#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="http://example.com">
+        <owl:imports rdf:resource="http://purl.org/nemo/gufo#"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.com#TratadoPor -->
+
+    <owl:ObjectProperty rdf:about="http://example.com#TratadoPor">
+        <rdfs:subPropertyOf rdf:resource="http://example.com#Tratamento_1"/>
+        <owl:inverseOf rdf:resource="http://example.com#Tratando"/>
+        <rdfs:domain rdf:resource="http://example.com#Paciente"/>
+        <rdfs:range rdf:resource="http://example.com#ProfissionalDaSade"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.com#Tratamento_1 -->
+
+    <owl:ObjectProperty rdf:about="http://example.com#Tratamento_1">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://example.com#Paciente"/>
+                    <rdf:Description rdf:about="http://example.com#ProfissionalDaSade"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://example.com#Paciente"/>
+                    <rdf:Description rdf:about="http://example.com#ProfissionalDaSade"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.com#Tratando -->
+
+    <owl:ObjectProperty rdf:about="http://example.com#Tratando">
+        <rdfs:subPropertyOf rdf:resource="http://example.com#Tratamento_1"/>
+        <rdfs:domain rdf:resource="http://example.com#ProfissionalDaSade"/>
+        <rdfs:range rdf:resource="http://example.com#Paciente"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.com#pacienteHasAlergiaAlimentar -->
+
+    <owl:ObjectProperty rdf:about="http://example.com#pacienteHasAlergiaAlimentar">
+        <rdfs:domain rdf:resource="http://example.com#Paciente"/>
+        <rdfs:range rdf:resource="http://example.com#AlergiaAlimentar"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.com#pacienteHasSintoma -->
+
+    <owl:ObjectProperty rdf:about="http://example.com#pacienteHasSintoma">
+        <rdfs:domain rdf:resource="http://example.com#Paciente"/>
+        <rdfs:range rdf:resource="http://example.com#Sintoma"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.com#riscoDeReçãoCruzadaHasPorcentagem -->
+
+    <owl:ObjectProperty rdf:about="http://example.com#riscoDeReçãoCruzadaHasPorcentagem">
+        <rdfs:domain rdf:resource="http://example.com#RiscoDeReaoCruzada"/>
+        <rdfs:range rdf:resource="http://example.com#Porcentagem"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.com#sintomaHasAlergiaAlimentar -->
+
+    <owl:ObjectProperty rdf:about="http://example.com#sintomaHasAlergiaAlimentar">
+        <rdfs:domain rdf:resource="http://example.com#Sintoma"/>
+        <rdfs:range rdf:resource="http://example.com#AlergiaAlimentar"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.com#Abacate -->
+
+    <owl:Class rdf:about="http://example.com#Abacate">
+        <rdfs:subClassOf rdf:resource="http://example.com#Frutas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Aglutininas -->
+
+    <owl:Class rdf:about="http://example.com#Aglutininas">
+        <rdfs:subClassOf rdf:resource="http://example.com#Albuminas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Albumina -->
+
+    <owl:Class rdf:about="http://example.com#Albumina">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#AlbuminaHidrossolvel -->
+
+    <owl:Class rdf:about="http://example.com#AlbuminaHidrossolvel">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Albuminas -->
+
+    <owl:Class rdf:about="http://example.com#Albuminas">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://example.com#Amendoim"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Alergia -->
+
+    <owl:Class rdf:about="http://example.com#Alergia">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#AlergiaAlimentar -->
+
+    <owl:Class rdf:about="http://example.com#AlergiaAlimentar">
+        <rdfs:subClassOf rdf:resource="http://example.com#Alergia"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#mediates"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#ReaoAlrgica"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#AlergiaRespiratria -->
+
+    <owl:Class rdf:about="http://example.com#AlergiaRespiratria">
+        <rdfs:subClassOf rdf:resource="http://example.com#Alergia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Alimento -->
+
+    <owl:Class rdf:about="http://example.com#Alimento">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#mediates"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#ReaoAlrgica"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#mediates"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#RiscoDeReaoCruzada"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Amendoim -->
+
+    <owl:Class rdf:about="http://example.com#Amendoim">
+        <rdfs:subClassOf rdf:resource="http://example.com#Alimento"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#Albuminas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#Globulinas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Amilase -->
+
+    <owl:Class rdf:about="http://example.com#Amilase">
+        <rdfs:subClassOf rdf:resource="http://example.com#Globulinas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Amndoas -->
+
+    <owl:Class rdf:about="http://example.com#Amndoas">
+        <rdfs:subClassOf rdf:resource="http://example.com#Alimento"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Araquina -->
+
+    <owl:Class rdf:about="http://example.com#Araquina">
+        <rdfs:subClassOf rdf:resource="http://example.com#Globulinas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Avel -->
+
+    <owl:Class rdf:about="http://example.com#Avel">
+        <rdfs:subClassOf rdf:resource="http://example.com#Alimento"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Banana -->
+
+    <owl:Class rdf:about="http://example.com#Banana">
+        <rdfs:subClassOf rdf:resource="http://example.com#Frutas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Camaro -->
+
+    <owl:Class rdf:about="http://example.com#Camaro">
+        <rdfs:subClassOf rdf:resource="http://example.com#Crustceos"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Carangueijo -->
+
+    <owl:Class rdf:about="http://example.com#Carangueijo">
+        <rdfs:subClassOf rdf:resource="http://example.com#Crustceos"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#CarneBovina -->
+
+    <owl:Class rdf:about="http://example.com#CarneBovina">
+        <rdfs:subClassOf rdf:resource="http://example.com#Alimento"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Casenas -->
+
+    <owl:Class rdf:about="http://example.com#Casenas">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#LeiteDeVaca"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Casenas_1 -->
+
+    <owl:Class rdf:about="http://example.com#Casenas_1">
+        <rdfs:subClassOf rdf:resource="http://example.com#Casenas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#CastanhaDeCaju -->
+
+    <owl:Class rdf:about="http://example.com#CastanhaDeCaju">
+        <rdfs:subClassOf rdf:resource="http://example.com#Alimento"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#CastanhaDoPar -->
+
+    <owl:Class rdf:about="http://example.com#CastanhaDoPar">
+        <rdfs:subClassOf rdf:resource="http://example.com#Alimento"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Castanhas -->
+
+    <owl:Class rdf:about="http://example.com#Castanhas">
+        <rdfs:subClassOf rdf:resource="http://example.com#Alimento"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Centeio -->
+
+    <owl:Class rdf:about="http://example.com#Centeio">
+        <rdfs:subClassOf rdf:resource="http://example.com#Alimento"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Cevada -->
+
+    <owl:Class rdf:about="http://example.com#Cevada">
+        <rdfs:subClassOf rdf:resource="http://example.com#Alimento"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Clara -->
+
+    <owl:Class rdf:about="http://example.com#Clara">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#Albumina"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#Lisozima"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#Ovalbumina"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#Ovomucina"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#Ovomucoide"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#Ovotransferrina"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Conaraquina -->
+
+    <owl:Class rdf:about="http://example.com#Conaraquina">
+        <rdfs:subClassOf rdf:resource="http://example.com#Globulinas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Crustceos -->
+
+    <owl:Class rdf:about="http://example.com#Crustceos">
+        <rdfs:subClassOf rdf:resource="http://example.com#Alimento"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#Tropomiosinas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Cutneas -->
+
+    <owl:Class rdf:about="http://example.com#Cutneas">
+        <rdfs:subClassOf rdf:resource="http://example.com#Sintoma"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Ervilha -->
+
+    <owl:Class rdf:about="http://example.com#Ervilha">
+        <rdfs:subClassOf rdf:resource="http://example.com#Leguminosas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Feijo -->
+
+    <owl:Class rdf:about="http://example.com#Feijo">
+        <rdfs:subClassOf rdf:resource="http://example.com#Leguminosas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Fosfolipases -->
+
+    <owl:Class rdf:about="http://example.com#Fosfolipases">
+        <rdfs:subClassOf rdf:resource="http://example.com#Albuminas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Fosvitina -->
+
+    <owl:Class rdf:about="http://example.com#Fosvitina">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://example.com#Grnulo"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Frutas -->
+
+    <owl:Class rdf:about="http://example.com#Frutas">
+        <rdfs:subClassOf rdf:resource="http://example.com#Alimento"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Gema -->
+
+    <owl:Class rdf:about="http://example.com#Gema">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#Grnulo"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#GliadinasABGV -->
+
+    <owl:Class rdf:about="http://example.com#GliadinasABGV">
+        <rdfs:subClassOf rdf:resource="http://example.com#Prolaminas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#GlicoprotenasLecitinoReativas -->
+
+    <owl:Class rdf:about="http://example.com#GlicoprotenasLecitinoReativas">
+        <rdfs:subClassOf rdf:resource="http://example.com#Albuminas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Globulinas -->
+
+    <owl:Class rdf:about="http://example.com#Globulinas">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://example.com#Soja"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#GlobulinasSolveis -->
+
+    <owl:Class rdf:about="http://example.com#GlobulinasSolveis">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Glutelinas -->
+
+    <owl:Class rdf:about="http://example.com#Glutelinas">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Gluteninas -->
+
+    <owl:Class rdf:about="http://example.com#Gluteninas">
+        <rdfs:subClassOf rdf:resource="http://example.com#Glutelinas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Grnulo -->
+
+    <owl:Class rdf:about="http://example.com#Grnulo">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#Fosvitina"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#LipoprotenaDeBaixaDensidade"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#Lipovitelina"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://example.com#Gema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#HemaglutininaInibidorDeTripsina -->
+
+    <owl:Class rdf:about="http://example.com#HemaglutininaInibidorDeTripsina">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Imunoglobulinas -->
+
+    <owl:Class rdf:about="http://example.com#Imunoglobulinas">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#InibidoresDeAAmilase -->
+
+    <owl:Class rdf:about="http://example.com#InibidoresDeAAmilase">
+        <rdfs:subClassOf rdf:resource="http://example.com#Albuminas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#InibidoresDeProtease -->
+
+    <owl:Class rdf:about="http://example.com#InibidoresDeProtease">
+        <rdfs:subClassOf rdf:resource="http://example.com#Albuminas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Kiwi -->
+
+    <owl:Class rdf:about="http://example.com#Kiwi">
+        <rdfs:subClassOf rdf:resource="http://example.com#Frutas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Lactoglobulina -->
+
+    <owl:Class rdf:about="http://example.com#Lactoglobulina">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Lagosta -->
+
+    <owl:Class rdf:about="http://example.com#Lagosta">
+        <rdfs:subClassOf rdf:resource="http://example.com#Crustceos"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Lecitina -->
+
+    <owl:Class rdf:about="http://example.com#Lecitina">
+        <rdfs:subClassOf rdf:resource="http://example.com#Globulinas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Leguminas -->
+
+    <owl:Class rdf:about="http://example.com#Leguminas">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Leguminosas -->
+
+    <owl:Class rdf:about="http://example.com#Leguminosas">
+        <rdfs:subClassOf rdf:resource="http://example.com#Alimento"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#Leguminas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#Vicilinas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#LeiteDeCabra -->
+
+    <owl:Class rdf:about="http://example.com#LeiteDeCabra">
+        <rdfs:subClassOf rdf:resource="http://example.com#Alimento"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#LeiteDeVaca -->
+
+    <owl:Class rdf:about="http://example.com#LeiteDeVaca">
+        <rdfs:subClassOf rdf:resource="http://example.com#Alimento"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#ProtenasDoSoro_1"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://example.com#Casenas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Lentilha -->
+
+    <owl:Class rdf:about="http://example.com#Lentilha">
+        <rdfs:subClassOf rdf:resource="http://example.com#Leguminosas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Linguado -->
+
+    <owl:Class rdf:about="http://example.com#Linguado">
+        <rdfs:subClassOf rdf:resource="http://example.com#Peixe"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#LipoprotenaDeBaixaDensidade -->
+
+    <owl:Class rdf:about="http://example.com#LipoprotenaDeBaixaDensidade">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://example.com#Grnulo"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://example.com#Plasma"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Lipovitelina -->
+
+    <owl:Class rdf:about="http://example.com#Lipovitelina">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Lipoxigenase -->
+
+    <owl:Class rdf:about="http://example.com#Lipoxigenase">
+        <rdfs:subClassOf rdf:resource="http://example.com#Globulinas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Lisozima -->
+
+    <owl:Class rdf:about="http://example.com#Lisozima">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://example.com#Clara"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Livetina -->
+
+    <owl:Class rdf:about="http://example.com#Livetina">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#ManifestaesSistmicas -->
+
+    <owl:Class rdf:about="http://example.com#ManifestaesSistmicas">
+        <rdfs:subClassOf rdf:resource="http://example.com#Sintoma"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#ManifestaoGastrintestinais -->
+
+    <owl:Class rdf:about="http://example.com#ManifestaoGastrintestinais">
+        <rdfs:subClassOf rdf:resource="http://example.com#Sintoma"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Nozes -->
+
+    <owl:Class rdf:about="http://example.com#Nozes">
+        <rdfs:subClassOf rdf:resource="http://example.com#Alimento"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Ovalbumina -->
+
+    <owl:Class rdf:about="http://example.com#Ovalbumina">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#OvoDeGalinha -->
+
+    <owl:Class rdf:about="http://example.com#OvoDeGalinha">
+        <rdfs:subClassOf rdf:resource="http://example.com#Alimento"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#Clara"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#Gema"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#Plasma"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Ovomucina -->
+
+    <owl:Class rdf:about="http://example.com#Ovomucina">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Ovomucoide -->
+
+    <owl:Class rdf:about="http://example.com#Ovomucoide">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Ovotransferrina -->
+
+    <owl:Class rdf:about="http://example.com#Ovotransferrina">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Paciente -->
+
+    <owl:Class rdf:about="http://example.com#Paciente">
+        <rdfs:subClassOf rdf:resource="http://example.com#Pessoa"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#mediates"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://example.com#Tratamento"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#ParvalbuminasalrgenoM -->
+
+    <owl:Class rdf:about="http://example.com#ParvalbuminasalrgenoM">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://example.com#Peixe"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Peixe -->
+
+    <owl:Class rdf:about="http://example.com#Peixe">
+        <rdfs:subClassOf rdf:resource="http://example.com#Alimento"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#ParvalbuminasalrgenoM"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#PeixeEspada -->
+
+    <owl:Class rdf:about="http://example.com#PeixeEspada">
+        <rdfs:subClassOf rdf:resource="http://example.com#Peixe"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Pessoa -->
+
+    <owl:Class rdf:about="http://example.com#Pessoa">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Pistache -->
+
+    <owl:Class rdf:about="http://example.com#Pistache">
+        <rdfs:subClassOf rdf:resource="http://example.com#Alimento"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Plasma -->
+
+    <owl:Class rdf:about="http://example.com#Plasma">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#LipoprotenaDeBaixaDensidade"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#Livetina"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://example.com#OvoDeGalinha"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Porcentagem -->
+
+    <owl:Class rdf:about="http://example.com#Porcentagem"/>
+    
+
+
+    <!-- http://example.com#ProfissionalDaSade -->
+
+    <owl:Class rdf:about="http://example.com#ProfissionalDaSade">
+        <rdfs:subClassOf rdf:resource="http://example.com#Pessoa"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#mediates"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://example.com#Tratamento"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Prolaminas -->
+
+    <owl:Class rdf:about="http://example.com#Prolaminas">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://example.com#Trigo"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#ProteasesEPeptonas -->
+
+    <owl:Class rdf:about="http://example.com#ProteasesEPeptonas">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#ProtenasDoSangue -->
+
+    <owl:Class rdf:about="http://example.com#ProtenasDoSangue">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://example.com#ProtenasDoSoro_1"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#ProtenasDoSoro -->
+
+    <owl:Class rdf:about="http://example.com#ProtenasDoSoro">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#Soja"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#ProtenasDoSoro_1 -->
+
+    <owl:Class rdf:about="http://example.com#ProtenasDoSoro_1">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#Albumina"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#Imunoglobulinas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#Lactoglobulina"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#ProteasesEPeptonas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#ProtenasDoSangue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#aLactoalbumina"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#ReaoAlrgica -->
+
+    <owl:Class rdf:about="http://example.com#ReaoAlrgica">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Relator"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/nemo/gufo#mediates"/>
+                <owl:someValuesFrom rdf:resource="http://example.com#AlergiaAlimentar"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/nemo/gufo#mediates"/>
+                <owl:someValuesFrom rdf:resource="http://example.com#Alimento"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Respiratrias -->
+
+    <owl:Class rdf:about="http://example.com#Respiratrias">
+        <rdfs:subClassOf rdf:resource="http://example.com#Sintoma"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#RiscoDeReaoCruzada -->
+
+    <owl:Class rdf:about="http://example.com#RiscoDeReaoCruzada">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Relator"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#historicallyDependsOn"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#Alergia"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Salmo -->
+
+    <owl:Class rdf:about="http://example.com#Salmo">
+        <rdfs:subClassOf rdf:resource="http://example.com#Peixe"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Sintoma -->
+
+    <owl:Class rdf:about="http://example.com#Sintoma">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Siri -->
+
+    <owl:Class rdf:about="http://example.com#Siri">
+        <rdfs:subClassOf rdf:resource="http://example.com#Crustceos"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Soja -->
+
+    <owl:Class rdf:about="http://example.com#Soja">
+        <rdfs:subClassOf rdf:resource="http://example.com#Alimento"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#Globulinas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#HemaglutininaInibidorDeTripsina"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#Urease"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#11SGlicinina"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Tratamento -->
+
+    <owl:Class rdf:about="http://example.com#Tratamento">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Relator"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/nemo/gufo#mediates"/>
+                <owl:someValuesFrom rdf:resource="http://example.com#Paciente"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/nemo/gufo#mediates"/>
+                <owl:someValuesFrom rdf:resource="http://example.com#ProfissionalDaSade"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Tremoo -->
+
+    <owl:Class rdf:about="http://example.com#Tremoo">
+        <rdfs:subClassOf rdf:resource="http://example.com#Leguminosas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Trigo -->
+
+    <owl:Class rdf:about="http://example.com#Trigo">
+        <rdfs:subClassOf rdf:resource="http://example.com#Alimento"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#AlbuminaHidrossolvel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#GlobulinasSolveis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#Glutelinas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://example.com#Prolaminas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Tropomiosinas -->
+
+    <owl:Class rdf:about="http://example.com#Tropomiosinas">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://example.com#Crustceos"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Urease -->
+
+    <owl:Class rdf:about="http://example.com#Urease">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#Vicilinas -->
+
+    <owl:Class rdf:about="http://example.com#Vicilinas">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://example.com#Leguminosas"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#aLactoalbumina -->
+
+    <owl:Class rdf:about="http://example.com#aLactoalbumina">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#asCasenasAs1As2 -->
+
+    <owl:Class rdf:about="http://example.com#asCasenasAs1As2">
+        <rdfs:subClassOf rdf:resource="http://example.com#Casenas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#gCasenas -->
+
+    <owl:Class rdf:about="http://example.com#gCasenas">
+        <rdfs:subClassOf rdf:resource="http://example.com#Casenas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#kCasenas -->
+
+    <owl:Class rdf:about="http://example.com#kCasenas">
+        <rdfs:subClassOf rdf:resource="http://example.com#Casenas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#11SGlicinina -->
+
+    <owl:Class rdf:about="http://example.com#11SGlicinina">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com#7SConglicina -->
+
+    <owl:Class rdf:about="http://example.com#7SConglicina">
+        <rdfs:subClassOf rdf:resource="http://example.com#Globulinas"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.com#Abacate -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Abacate">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Aglutininas -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Aglutininas">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#SubKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Albumina -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Albumina">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#AlbuminaHidrossolvel -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#AlbuminaHidrossolvel">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Albuminas -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Albuminas">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Alergia -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Alergia">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Category"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#AlergiaAlimentar -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#AlergiaAlimentar">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#AlergiaRespiratria -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#AlergiaRespiratria">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Alimento -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Alimento">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Category"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Amilase -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Amilase">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#SubKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Amndoas -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Amndoas">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Araquina -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Araquina">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#SubKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Avel -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Avel">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Banana -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Banana">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Camaro -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Camaro">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Carangueijo -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Carangueijo">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#CarneBovina -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#CarneBovina">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Casenas -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Casenas">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Casenas_1 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Casenas_1">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#SubKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#CastanhaDeCaju -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#CastanhaDeCaju">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#CastanhaDoPar -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#CastanhaDoPar">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Castanhas -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Castanhas">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Centeio -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Centeio">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Cevada -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Cevada">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Clara -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Clara">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Conaraquina -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Conaraquina">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#SubKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Crustceos -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Crustceos">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Category"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Cutneas -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Cutneas">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#SubKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Ervilha -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Ervilha">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Feijo -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Feijo">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Fosfolipases -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Fosfolipases">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#SubKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Fosvitina -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Fosvitina">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Frutas -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Frutas">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Category"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Gema -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Gema">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#GliadinasABGV -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#GliadinasABGV">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#SubKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#GlicoprotenasLecitinoReativas -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#GlicoprotenasLecitinoReativas">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#SubKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Globulinas -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Globulinas">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#GlobulinasSolveis -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#GlobulinasSolveis">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Glutelinas -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Glutelinas">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Gluteninas -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Gluteninas">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#SubKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Grnulo -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Grnulo">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#HemaglutininaInibidorDeTripsina -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#HemaglutininaInibidorDeTripsina">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Imunoglobulinas -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Imunoglobulinas">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#InibidoresDeAAmilase -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#InibidoresDeAAmilase">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#SubKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#InibidoresDeProtease -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#InibidoresDeProtease">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#SubKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Kiwi -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Kiwi">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Lactoglobulina -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Lactoglobulina">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Lagosta -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Lagosta">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Lecitina -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Lecitina">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#SubKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Leguminas -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Leguminas">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Leguminosas -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Leguminosas">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Category"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#LeiteDeCabra -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#LeiteDeCabra">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#LeiteDeVaca -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#LeiteDeVaca">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Leite_Betania -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Leite_Betania">
+        <rdf:type rdf:resource="http://example.com#LeiteDeVaca"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Lentilha -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Lentilha">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Linguado -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Linguado">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#SubKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#LipoprotenaDeBaixaDensidade -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#LipoprotenaDeBaixaDensidade">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Lipovitelina -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Lipovitelina">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Lipoxigenase -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Lipoxigenase">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#SubKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Lisozima -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Lisozima">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Livetina -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Livetina">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#ManifestaesSistmicas -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#ManifestaesSistmicas">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#SubKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#ManifestaoGastrintestinais -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#ManifestaoGastrintestinais">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#SubKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Nozes -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Nozes">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Ovalbumina -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Ovalbumina">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#OvoDeGalinha -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#OvoDeGalinha">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Ovomucina -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Ovomucina">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Ovomucoide -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Ovomucoide">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Ovotransferrina -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Ovotransferrina">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Paciente -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Paciente">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Role"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Paciente1 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Paciente1">
+        <rdf:type rdf:resource="http://example.com#Paciente"/>
+        <TratadoPor rdf:resource="http://example.com#Profissional1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#ParvalbuminasalrgenoM -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#ParvalbuminasalrgenoM">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Peixe -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Peixe">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#PeixeEspada -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#PeixeEspada">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#SubKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Pessoa -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Pessoa">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Pistache -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Pistache">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Plasma -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Plasma">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Profissional1 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Profissional1">
+        <rdf:type rdf:resource="http://example.com#ProfissionalDaSade"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#ProfissionalDaSade -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#ProfissionalDaSade">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Role"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Prolaminas -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Prolaminas">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#ProteasesEPeptonas -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#ProteasesEPeptonas">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#ProtenasDoSangue -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#ProtenasDoSangue">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#ProtenasDoSoro -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#ProtenasDoSoro">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#ProtenasDoSoro_1 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#ProtenasDoSoro_1">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#ReaoAlrgica -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#ReaoAlrgica">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Respiratrias -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Respiratrias">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#SubKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#RiscoDeReaoCruzada -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#RiscoDeReaoCruzada">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Salmo -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Salmo">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#SubKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Sintoma -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Sintoma">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Siri -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Siri">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Soja -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Soja">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Tratamento -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Tratamento">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Tratamento_1 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Tratamento_1">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#MaterialRelationshipType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Tremoo -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Tremoo">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Trigo -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Trigo">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Tropomiosinas -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Tropomiosinas">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Urease -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Urease">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#Vicilinas -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#Vicilinas">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#aLactoalbumina -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#aLactoalbumina">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#asCasenasAs1As2 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#asCasenasAs1As2">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#SubKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#gCasenas -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#gCasenas">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#SubKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#kCasenas -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#kCasenas">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#SubKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#sintomaHasAlergiaAlimentar -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#sintomaHasAlergiaAlimentar">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#MaterialRelationshipType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com#7SConglicina -->
+
+    <owl:NamedIndividual rdf:about="http://example.com#7SConglicina">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#SubKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://example.com#Abacate">
+        <rdfs:label xml:lang="en">Abacate</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Aglutininas">
+        <rdfs:label xml:lang="en">Aglutininas</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Albumina">
+        <rdfs:label xml:lang="en">Albumina</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#AlbuminaHidrossolvel">
+        <rdfs:label xml:lang="en">Albumina hidrossolúvel</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Albuminas">
+        <rdfs:label xml:lang="en">Albuminas</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Alergia">
+        <rdfs:label xml:lang="en">Alergia</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#AlergiaAlimentar">
+        <rdfs:label xml:lang="en">Alergia Alimentar</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#AlergiaRespiratria">
+        <rdfs:label xml:lang="en">Alergia Respiratória</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Alimento">
+        <rdfs:label xml:lang="en">Alimento</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Amilase">
+        <rdfs:label xml:lang="en">b-amilase</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Amndoas">
+        <rdfs:label xml:lang="en">Amêndoas</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Araquina">
+        <rdfs:label xml:lang="en">Araquina</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Avel">
+        <rdfs:label xml:lang="en">Avelã</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Banana">
+        <rdfs:label xml:lang="en">Banana</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Camaro">
+        <rdfs:label xml:lang="en">Camarão</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Carangueijo">
+        <rdfs:label xml:lang="en">Carangueijo</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#CarneBovina">
+        <rdfs:label xml:lang="en">Carne Bovina</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Casenas">
+        <rdfs:label xml:lang="en">Caseínas</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Casenas_1">
+        <rdfs:label xml:lang="en">b-caseínas</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#CastanhaDeCaju">
+        <rdfs:label xml:lang="en">Castanha de caju</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#CastanhaDoPar">
+        <rdfs:label xml:lang="en">Castanha-do-pará</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Castanhas">
+        <rdfs:label xml:lang="en">Castanhas</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Centeio">
+        <rdfs:label xml:lang="en">Centeio</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Cevada">
+        <rdfs:label xml:lang="en">Cevada</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Clara">
+        <rdfs:label xml:lang="en">Clara</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Conaraquina">
+        <rdfs:label xml:lang="en">Conaraquina</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Crustceos">
+        <rdfs:label xml:lang="en">Crustáceos</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Cutneas">
+        <rdfs:label xml:lang="en">Cutâneas</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Ervilha">
+        <rdfs:label xml:lang="en">Ervilha</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Feijo">
+        <rdfs:label xml:lang="en">Feijão</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Fosfolipases">
+        <rdfs:label xml:lang="en">Fosfolipases</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Fosvitina">
+        <rdfs:label xml:lang="en">Fosvitina</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Frutas">
+        <rdfs:label xml:lang="en">Frutas</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Gema">
+        <rdfs:label xml:lang="en">Gema</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#GliadinasABGV">
+        <rdfs:label xml:lang="en">Gliadinas a, b, g, v</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#GlicoprotenasLecitinoReativas">
+        <rdfs:label xml:lang="en">Glicoproteínas lecitino reativas</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Globulinas">
+        <rdfs:label xml:lang="en">Globulinas</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#GlobulinasSolveis">
+        <rdfs:label xml:lang="en">Globulinas solúveis</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Glutelinas">
+        <rdfs:label xml:lang="en">Glutelinas</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Gluteninas">
+        <rdfs:label xml:lang="en">Gluteninas</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Grnulo">
+        <rdfs:label xml:lang="en">Gránulo</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#HemaglutininaInibidorDeTripsina">
+        <rdfs:label xml:lang="en"> Hemaglutinina Inibidor de tripsina</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Imunoglobulinas">
+        <rdfs:label xml:lang="en">Imunoglobulinas</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#InibidoresDeAAmilase">
+        <rdfs:label xml:lang="en">Inibidores de a-amilase</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#InibidoresDeProtease">
+        <rdfs:label xml:lang="en">Inibidores de protease</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Kiwi">
+        <rdfs:label xml:lang="en">Kiwi</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Lactoglobulina">
+        <rdfs:label xml:lang="en">b-lactoglobulina</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Lagosta">
+        <rdfs:label xml:lang="en">Lagosta</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Lecitina">
+        <rdfs:label xml:lang="en">Lecitina</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Leguminas">
+        <rdfs:label xml:lang="en">Leguminas</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Leguminosas">
+        <rdfs:label xml:lang="en">Leguminosas</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#LeiteDeCabra">
+        <rdfs:label xml:lang="en">Leite de Cabra</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#LeiteDeVaca">
+        <rdfs:label xml:lang="en">Leite de Vaca</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Lentilha">
+        <rdfs:label xml:lang="en">Lentilha</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Linguado">
+        <rdfs:label xml:lang="en">Linguado</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#LipoprotenaDeBaixaDensidade">
+        <rdfs:label xml:lang="en">Lipoproteína de baixa densidade</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Lipovitelina">
+        <rdfs:label xml:lang="en">Lipovitelina</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Lipoxigenase">
+        <rdfs:label xml:lang="en">Lipoxigenase</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Lisozima">
+        <rdfs:label xml:lang="en">Lisozima</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Livetina">
+        <rdfs:label xml:lang="en">Livetina</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#ManifestaesSistmicas">
+        <rdfs:label xml:lang="en">Manifestações sistémicas</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#ManifestaoGastrintestinais">
+        <rdfs:label xml:lang="en">Manifestação gastrintestinais</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Nozes">
+        <rdfs:label xml:lang="en">Nozes</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Ovalbumina">
+        <rdfs:label xml:lang="en">Ovalbumina</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#OvoDeGalinha">
+        <rdfs:label xml:lang="en">Ovo de Galinha</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Ovomucina">
+        <rdfs:label xml:lang="en">Ovomucina</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Ovomucoide">
+        <rdfs:label xml:lang="en">Ovomucoide</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Ovotransferrina">
+        <rdfs:label xml:lang="en">Ovotransferrina</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Paciente">
+        <rdfs:label xml:lang="en">Paciente</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#ParvalbuminasalrgenoM">
+        <rdfs:label xml:lang="en">Parvalbuminas (alérgeno M)</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Peixe">
+        <rdfs:label xml:lang="en">Peixe</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#PeixeEspada">
+        <rdfs:label xml:lang="en">Peixe-espada</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Pessoa">
+        <rdfs:label xml:lang="en">Pessoa</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Pistache">
+        <rdfs:label xml:lang="en">Pistache</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Plasma">
+        <rdfs:label xml:lang="en">Plasma</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#ProfissionalDaSade">
+        <rdfs:label xml:lang="en">Profissional da Saúde</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Prolaminas">
+        <rdfs:label xml:lang="en">Prolaminas</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#ProteasesEPeptonas">
+        <rdfs:label xml:lang="en">Proteases e peptonas</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#ProtenasDoSangue">
+        <rdfs:label xml:lang="en">Proteínas do sangue</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#ProtenasDoSoro">
+        <rdfs:label xml:lang="en">Proteínas do soro</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#ProtenasDoSoro_1">
+        <rdfs:label xml:lang="en">Proteínas do Soro</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#ReaoAlrgica">
+        <rdfs:label xml:lang="en">Reação Alérgica</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Respiratrias">
+        <rdfs:label xml:lang="en">Respiratórias</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#RiscoDeReaoCruzada">
+        <rdfs:label xml:lang="en">Risco de Reação Cruzada</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Salmo">
+        <rdfs:label xml:lang="en">Salmão</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Sintoma">
+        <rdfs:label xml:lang="en">Sintoma</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Siri">
+        <rdfs:label xml:lang="en">Siri</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Soja">
+        <rdfs:label xml:lang="en">Soja</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Tratamento">
+        <rdfs:label xml:lang="en">Tratamento</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Tratamento_1">
+        <rdfs:label xml:lang="en">Tratamento</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Tremoo">
+        <rdfs:label xml:lang="en">Tremoço</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Trigo">
+        <rdfs:label xml:lang="en">Trigo</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Tropomiosinas">
+        <rdfs:label xml:lang="en">Tropomiosinas</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Urease">
+        <rdfs:label xml:lang="en">Urease</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#Vicilinas">
+        <rdfs:label xml:lang="en">Vicilinas</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#aLactoalbumina">
+        <rdfs:label xml:lang="en">a-lactoalbumina</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#asCasenasAs1As2">
+        <rdfs:label xml:lang="en">as-caseínas: as1, as2</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#gCasenas">
+        <rdfs:label xml:lang="en">g-caseínas</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#kCasenas">
+        <rdfs:label xml:lang="en">k-caseínas</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.com#7SConglicina">
+        <rdfs:label xml:lang="en">7S: b-conglicina</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
