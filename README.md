@@ -64,7 +64,7 @@ SELECT ?paciente ?alergia ?reação  ?alimento
 	?alimento 	rdfs:subClassOf 		:Alimento	
 }
 ```
-Quais alternativas seguras existem ao alimento K para o paciente X? (note que se deve alterar onde existe ':Paciente1' para o paciente que deseja retornar a lista )
+Quais alternativas seguras existem ao alimento K para o paciente X? (Deve se alterar onde existe ':Paciente1' para o paciente que deseja retornar a lista )
 ```
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
