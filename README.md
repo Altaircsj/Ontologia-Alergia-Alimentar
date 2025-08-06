@@ -37,7 +37,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX : 	<http://example.com#>
 PREFIX gufo: <http://purl.org/nemo/gufo#>
 
-SELECT ?paciente ?alergia ?reação  ?alimento
+SELECT ?alimentos
 	WHERE 
 {
 	?alimentos rdfs:subClassOf+ :Alimento
